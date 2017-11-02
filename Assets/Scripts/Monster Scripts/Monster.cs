@@ -69,4 +69,28 @@ public class Monster : MonoBehaviour
             b.GetComponent<Rigidbody>().AddForce(transform.forward * 1500f);
         }
     }
+
+    private void OnTriggerEnter(Collider target)
+    {
+        if(target.tag == Tags.PLAYER_BULLET_TAG)
+        {
+            Death();
+        }
+    }
+
+    private void OnCollisionEnter(Collision target)
+    {
+        if(target.gameObject.tag == Tags.PLAYER_TAG)
+        {
+            Death();
+        }
+    }
+
+    private void Death()
+    {
+        var effectPosition = transform.position;
+        effectPosition.y += 2f;
+        Instantiate(MonsterDiedEffect, effectPosition, Quaternion.identity);
+        gameObject.SetActive(false);
+    }
 }
