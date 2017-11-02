@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private bool gameStarted;
     private PlayerAnimation playerAnimation;
     private BackgroundScroller backgroundScroller;
+    private PlayerHealthDamageShoot playerHealthDamageShoot;
 
     public bool CanJump {
         get
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         playerBody = GetComponent<Rigidbody>();
         playerAnimation = GetComponent<PlayerAnimation>();
         backgroundScroller = GameObject.Find(GameObjects.BACKGROUND).GetComponent<BackgroundScroller>();
+        playerHealthDamageShoot = GameObject.FindGameObjectWithTag(Tags.PLAYER_TAG).GetComponent<PlayerHealthDamageShoot>();
     }
 
     // Use this for initialization
@@ -93,7 +95,10 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(2f);
         gameStarted = true;
         smokePosition.SetActive(true);
+
+        // todo: encapsulate the "activated" states within the class and start with method call (interface implementation?)
         backgroundScroller.canScroll = true;
+        playerHealthDamageShoot.canShoot = true;
         playerAnimation.PlayerRun();
     }
 }

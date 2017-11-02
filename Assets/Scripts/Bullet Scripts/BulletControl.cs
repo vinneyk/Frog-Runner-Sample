@@ -37,9 +37,5 @@ public class BulletControl : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-        if(target.tag == Tags.PLAYER_TAG)
-        {
-            // todo: kill player, play death animation, reset game
-        }
     }
 }

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23866418216577918}
   - component: {fileID: 54782156295390272}
   - component: {fileID: 114562643068307598}
+  - component: {fileID: 114856506688369632}
   m_Layer: 11
   m_Name: Monster Bullet
   m_TagString: MonsterBullet
@@ -112,6 +113,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LifeTime: 5
+--- !u!114 &114856506688369632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1856939636805368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b7c816b06b4ff47b48ce6a27485b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0.5
 --- !u!135 &135547628698877054
 SphereCollider:
   m_ObjectHideFlags: 1

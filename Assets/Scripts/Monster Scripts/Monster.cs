@@ -60,7 +60,7 @@ public class Monster : MonoBehaviour
 
     void StartShooting()
     {
-        if(playerTransform)
+        if(playerTransform && bullet)
         {
             var bulletPos = transform.position;
             bulletPos.y += 1.5f;
@@ -72,8 +72,9 @@ public class Monster : MonoBehaviour
 
     private void OnTriggerEnter(Collider target)
     {
-        if(target.tag == Tags.PLAYER_BULLET_TAG)
+        if (target.tag == Tags.PLAYER_BULLET_TAG)
         {
+            var targetPos = target.transform.position;
             Death();
         }
     }
@@ -92,5 +93,6 @@ public class Monster : MonoBehaviour
         effectPosition.y += 2f;
         Instantiate(MonsterDiedEffect, effectPosition, Quaternion.identity);
         gameObject.SetActive(false);
+        CancelInvoke("StartShooting");
     }
 }
