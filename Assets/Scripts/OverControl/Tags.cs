@@ -11,6 +11,8 @@ public class Tags : MonoBehaviour
     public static string MORE_PLATFORMS_TAG = "MorePlatforms";
     public static string HEALTH_TAG = "Health";
     public static string MONSTER_TAG = "Monster";
+    public static string MONSTER_BULLET_TAG = "MonsterTag";
+    public static string PLAYER_BULLET_TAG = "PlayerBullet";
 
     public static string ANIMATION_IDLE = "idle";
     public static string ANIMATION_RUN = "run";

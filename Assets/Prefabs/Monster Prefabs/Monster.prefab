@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 111268700091558674}
   - component: {fileID: 54265671267306810}
   - component: {fileID: 136035426551388266}
+  - component: {fileID: 114222860617200156}
   m_Layer: 13
   m_Name: Monster
   m_TagString: Monster
@@ -383,6 +384,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4488955113489478}
   - component: {fileID: 137728279995376870}
+  - component: {fileID: 114746695040705734}
+  - component: {fileID: 114727954355399534}
   m_Layer: 13
   m_Name: Robot
   m_TagString: Untagged
@@ -945,7 +948,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1472588767477460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.3166668, y: -1.1197963, z: 2.9253125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4303714062332048}
@@ -1048,6 +1051,57 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &114222860617200156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1472588767477460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1840d307a7110364d805696d7b502f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MonsterDiedEffect: {fileID: 0}
+  bullet: {fileID: 4262455972839268, guid: 77f4fe5ce7462984093d5d4854f00f38, type: 2}
+  distanceFromPlayerToStartMove: 20
+  movementSpeed_min: 1
+  movementSpeed_max: 1
+  canShoot: 1
+--- !u!114 &114727954355399534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1639927838250524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1840d307a7110364d805696d7b502f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MonsterDiedEffect: {fileID: 0}
+  bullet: {fileID: 0}
+  distanceFromPlayerToStartMove: 20
+  movementSpeed_min: 1
+  movementSpeed_max: 1
+  canShoot: 0
+--- !u!114 &114746695040705734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1639927838250524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1840d307a7110364d805696d7b502f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MonsterDiedEffect: {fileID: 0}
+  bullet: {fileID: 0}
+  distanceFromPlayerToStartMove: 20
+  movementSpeed_min: 1
+  movementSpeed_max: 1
+  canShoot: 0
 --- !u!136 &136035426551388266
 CapsuleCollider:
   m_ObjectHideFlags: 1
