@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4056970754110814}
   - component: {fileID: 135504744681041026}
   m_Layer: 0
-  m_Name: Health
+  m_Name: Health Prefab
   m_TagString: Health
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

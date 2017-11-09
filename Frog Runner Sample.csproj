@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.2.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -224,6 +226,8 @@
     <Compile Include="Assets\Scripts\Effects Scripts\ParticleEffectsScript.cs" />
     <Compile Include="Assets\Scripts\Level Scripts\BackgroundScroller.cs" />
     <Compile Include="Assets\Scripts\Level Scripts\LevelGenerator.cs" />
+    <Compile Include="Assets\Scripts\Level Scripts\LevelGeneratorPooling.cs" />
+    <Compile Include="Assets\Scripts\Level Scripts\PlatformPositionInfo.cs" />
     <Compile Include="Assets\Scripts\Level Scripts\TrashCollector.cs" />
     <Compile Include="Assets\Scripts\Monster Scripts\Monster.cs" />
     <Compile Include="Assets\Scripts\OverControl\Tags.cs" />

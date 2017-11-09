@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelGenerator : MonoBehaviour {
+public partial class LevelGenerator : MonoBehaviour {
 
     [SerializeField]
     private int levelLength;
@@ -48,29 +48,13 @@ public class LevelGenerator : MonoBehaviour {
         Flat
     }
 
-    private class PlatformPositionInfo
-    {
-        public PlatformType platformType;
-        public float positionY;
-        public bool hasMonster;
-        public bool hasHealthCollectable;
-
-        public PlatformPositionInfo(PlatformType type, float posY, bool hasMonster, bool hasCollectable)
-        {
-            platformType = type;
-            positionY = posY;
-            this.hasMonster = hasMonster;
-            this.hasHealthCollectable = hasCollectable;
-        }
-    }
-
     void FillOutPositionInfo(PlatformPositionInfo[] platformInfo)
     {
         int currentPlatformInfoIndex = 0;
 
         for(int i = 0; i < startPlatformLength; i++)
         {
-            platformInfo[i].platformType = PlatformType.Flat;
+            //platformInfo[i].platformType = PlatformType.Flat;
             platformInfo[i].positionY = 0f;
 
             currentPlatformInfoIndex++;
@@ -78,11 +62,11 @@ public class LevelGenerator : MonoBehaviour {
 
         while (currentPlatformInfoIndex < levelLength - endPlatformLength)
         {
-            if (platformInfo[currentPlatformInfoIndex - 1].platformType != PlatformType.None)
-            {
-                currentPlatformInfoIndex++;
-                continue;
-            }
+            //if (platformInfo[currentPlatformInfoIndex - 1].platformType != PlatformType.None)
+            //{
+            //    currentPlatformInfoIndex++;
+            //    continue;
+            //}
 
             float platformPositionY = Random.Range(platformPosition_minY, platformPosition_maxY);
             int platformLength = Random.Range(platformLength_min, platformLength_max);
@@ -92,7 +76,7 @@ public class LevelGenerator : MonoBehaviour {
                 bool hasMonster = (Random.Range(0f, 1f) < chanceForMonsterExistance);
                 bool hasHealthCollectable = (Random.Range(0f, 1f) < chanceForCollectableExistance);
 
-                platformInfo[currentPlatformInfoIndex].platformType = PlatformType.Flat;
+                //platformInfo[currentPlatformInfoIndex].platformType = PlatformType.Flat;
                 platformInfo[currentPlatformInfoIndex].positionY = platformPositionY;
                 platformInfo[currentPlatformInfoIndex].hasMonster = hasMonster;
                 platformInfo[currentPlatformInfoIndex].hasHealthCollectable = hasHealthCollectable;
@@ -109,7 +93,7 @@ public class LevelGenerator : MonoBehaviour {
 
         for(int i = 0; i < endPlatformLength; i++)
         {
-            platformInfo[currentPlatformInfoIndex].platformType = PlatformType.Flat;
+            //platformInfo[currentPlatformInfoIndex].platformType = PlatformType.Flat;
             platformInfo[currentPlatformInfoIndex].positionY = 0f;
 
             currentPlatformInfoIndex++;
@@ -122,10 +106,10 @@ public class LevelGenerator : MonoBehaviour {
         for (int i = 0; i < platformPositionInfo.Length; i++)
         {
             current = platformPositionInfo[i];
-            if(current.platformType == PlatformType.None)
-            {
-                continue;
-            }
+            ////if(current.platformType == PlatformType.None)
+            //{
+            //    continue;
+            //}
 
             //todo: check if game is started or not
 
@@ -168,23 +152,23 @@ public class LevelGenerator : MonoBehaviour {
         }
     }
 
-    public void GeneratePlatforms()
-    {
-        GenerateLevel(false);
-    }
-    private void GenerateLevel(bool firstRun) {
-        var platformInfo = new PlatformPositionInfo[levelLength];
-        for (int i = 0; i < platformInfo.Length; i++) {
-            platformInfo[i] = new PlatformPositionInfo(PlatformType.None, -1f, false, false);
-        }
+    //public void GeneratePlatforms()
+    //{
+    //    GenerateLevel(false);
+    //}
+    //private void GenerateLevel(bool firstRun) {
+    //    var platformInfo = new PlatformPositionInfo[levelLength];
+    //    for (int i = 0; i < platformInfo.Length; i++) {
+    //        platformInfo[i] = new PlatformPositionInfo(PlatformType.None, -1f, false, false);
+    //    }
 
-        FillOutPositionInfo(platformInfo);
-        CreatePlatformsFromPositionInfo(platformInfo, firstRun);
-    }
+    //    FillOutPositionInfo(platformInfo);
+    //    CreatePlatformsFromPositionInfo(platformInfo, firstRun);
+    //}
 
     // Use this for initialization
-    void Start () {
-        GenerateLevel(true);
-	}
+ //   void Start () {
+ //       GenerateLevel(true);
+	//}
 	
 }

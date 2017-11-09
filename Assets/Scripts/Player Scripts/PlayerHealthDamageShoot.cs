@@ -6,15 +6,18 @@ public class PlayerHealthDamageShoot : MonoBehaviour
 {
     [SerializeField]
     private Transform playerBullet;
+    [SerializeField]
+    private bool invincible;
 
     private float distanceBeforeNewPlatforms = 120f;
-    private LevelGenerator levelGenerator;
+    //private LevelGenerator levelGenerator;
+    private LevelGeneratorPooling levelGenerator;
     private Transform playerTransform;
     public bool canShoot;
 
 	// Use this for initialization
 	void Awake () {
-        levelGenerator = GameObject.Find(GameObjects.LEVEL_GENERATOR).GetComponent<LevelGenerator>();
+        levelGenerator = GameObject.Find(GameObjects.LEVEL_GENERATOR).GetComponent<LevelGeneratorPooling>();
         playerTransform = GameObject.Find("Player").GetComponent<Transform>();
 	}
 
@@ -31,7 +34,7 @@ public class PlayerHealthDamageShoot : MonoBehaviour
                 Vector3 temp = target.transform.position;
                 temp.x += distanceBeforeNewPlatforms;
                 target.transform.position = temp;
-                levelGenerator.GeneratePlatforms();
+                levelGenerator.ExtendPlatforms();
                 break;
             case Tags.MONSTER_TAG:
             case Tags.MONSTER_BULLET_TAG:
@@ -70,7 +73,10 @@ public class PlayerHealthDamageShoot : MonoBehaviour
 
     private void Die()
     {
-        // todo: inform game controller
-        Destroy(gameObject);
+        if (!invincible)
+        {
+            // todo: inform game controller
+            Destroy(gameObject);
+        }
     }
 }
